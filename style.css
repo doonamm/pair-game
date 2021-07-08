@@ -185,15 +185,15 @@ body{
     }
     #pair-game .top-section > h2{
         font-size: 4.5em;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     #pair-game .top-section .level{
         font-size: 3.5em;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     #pair-game .top-section .count-down{
         font-size: 3em;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     #pair-game .card{
         box-shadow: inset 0 0 20px 0px green;
