@@ -16,6 +16,7 @@ body{
     background-color: #fff;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 ::-webkit-scrollbar{
     display: none;
