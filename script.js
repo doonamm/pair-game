@@ -126,7 +126,7 @@ function startGame(){
     updateWidth();
     document.getElementById('level-value').innerHTML = level;
     card_list.textContent = '';
-    count_down = level * 10;
+    count_down = level * 8;
     time.innerHTML = count_down;
     for(let i = 0; i < card_amount; i++){
         initCard();
