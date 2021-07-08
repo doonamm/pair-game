@@ -16,7 +16,6 @@ body{
     background-color: #fff;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
 }
 ::-webkit-scrollbar{
     display: none;
@@ -45,7 +44,7 @@ body{
     text-align: center;
     margin: 5px;
     border-radius: 50%;
-    perspective: 500px;
+    perspective: 400px;
 }
 #pair-game .card{
     position: relative;
@@ -56,7 +55,7 @@ body{
     border-radius: inherit;
     display: inline-block;
     box-shadow: inset 0 0 10px -0.5px green;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.3s ease-out;
     /* Cach 1 */
     /* display: flex;
     flex-direction: column;
@@ -194,5 +193,8 @@ body{
     #pair-game .top-section .count-down{
         font-size: 3em;
         margin-bottom: 30px;
+    }
+    #pair-game .card{
+        box-shadow: inset 0 0 20px 0px green;
     }
 }
