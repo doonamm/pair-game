@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: cursive;
+    font-size: 20px;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#pair-game{
+    width: 100%;
+    height: auto;
+    margin: 5px 10px;
+    background-color: #fff;
+    user-select: none;
+    text-align: center;
+}
+#pair-game ul li{
+    display: inline-block;
+}
+#pair-game .card-list{
+    width: fit-content;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+}
+#pair-game .scene{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 50%;
+    perspective: 500px;
+}
+#pair-game .card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    border-radius: inherit;
+    display: inline-block;
+    box-shadow: inset 0 0 10px -0.5px green;
+    transition: transform 0.2s ease-out;
+    /* Cach 1 */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* Cach 2 */
+    /* display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center; */
+}
+#pair-game .card.flip{
+    transform: rotateY(180deg);
+}
+#pair-game img{
+    position: absolute;
+    width: 82%;
+    height: auto;
+    /* Cach 3 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg); 
+    pointer-events: none;
+    backface-visibility: hidden;
+    transition: filter 0.3s ease-out;
+}
+#pair-game .card::before{
+    content: "";
+    display: inline-block;
+    background-image: url(images/hide.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: inherit;
+    filter: brightness(90%) sepia(0.05) contrast(1.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+#pair-game .top-section{
+    height: fit-content;
+    padding-bottom: 10px;
+    font-size: 20px;
+    /* border: 1px solid #000; */
+}
+#pair-game .top-section > h2{
+    position: relative;
+    font-size: 2em;
+    text-decoration: underline;
+    display: inline-block;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 8px green, 1px 0px 4px #000, 2px 1px 4px green;
+    transition: text-shadow 0.3s ease-in-out;
+    animation-duration: .22s;
+    animation-iteration-count: infinite;
+}
+#pair-game .top-section > h2.shake{
+    animation-name: shake;
+    text-shadow: 3px 3px 8px #f00, 1px 0px 4px #000, 2px 1px 4px #f00;
+}
+#pair-game .top-section .level{
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+#pair-game .top-section .level > span{
+    font-size: 1em;
+}
+#pair-game .top-section .count-down{
+    font-size: 1.8em;
+    color: #ff0;
+    text-shadow: 1px 0px 1px #000, -1px 0 1px #000, 4px 3px 3px #000;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    transition: color 0.3s, text-shadow 0.3s;
+    transition-timing-function: ease-in-out;
+}
+#pair-game .top-section .count-down.shake{
+    color: #f00;
+    animation-name: shake;
+    text-shadow: 1px 0px 1px #000, -1px 0 1px #000, 4px 3px 3px #000;
+}
+#pair-game .container{
+    width: fit-content;
+    margin: 0 auto;
+}
+#pair-game #special-item{
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-name: shake-special;
+}
+@keyframes shake{
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+@keyframes shake-special{
+    0% { transform: translate(1px, 1px) rotate(0deg) scale(1); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg) scale(1.1); }
+    20% { transform: translate(-3px, 0px) rotate(1deg) scale(1.2); }
+    30% { transform: translate(3px, 2px) rotate(0deg) scale(1.2); }
+    40% { transform: translate(1px, -1px) rotate(1deg) scale(1.1); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg) scale(1); }
+    60% { transform: translate(-3px, 1px) rotate(0deg) scale(1.1); }
+    70% { transform: translate(3px, 1px) rotate(-1deg) scale(1.2); }
+    80% { transform: translate(-1px, -1px) rotate(1deg) scale(1.2); }
+    90% { transform: translate(1px, 2px) rotate(0deg) scale(1.1); }
+    100% { transform: translate(1px, -2px) rotate(-1deg) scale(1); }
+}
+@media only screen and (min-device-width: 393px) and (max-device-width: 896px){
+    #pair-game .scene{
+        width: 160px;
+        height: 160px;
+        margin: 10px;
+    }
+    #pair-game .top-section > h2{
+        font-size: 4.5em;
+        margin-bottom: 30px;
+    }
+    #pair-game .top-section .level{
+        font-size: 3.5em;
+        margin-bottom: 30px;
+    }
+    #pair-game .top-section .count-down{
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+}
