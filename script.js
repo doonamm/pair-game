@@ -40,7 +40,7 @@ function clickEvent(e = window.event){
             time.innerHTML = count_down;
             count_loop = setInterval(()=>{
                 count_down--;
-                if (count_down === 6){
+                if (count_down === 5){
                     time.classList.toggle('shake');
                 }
                 if(count_down < 0){
@@ -95,8 +95,6 @@ function clickEvent(e = window.event){
             }   
         }
     }
-    else
-        console.log("It's not card");
 }
 function endGame(){
     time.classList.toggle('shake');
@@ -131,13 +129,29 @@ function startGame(){
     for(let i = 0; i < card_amount; i++){
         initCard();
     }
+    review();
     setTimeout(()=>{
         let cards = document.getElementsByClassName('card');
         for(let card of cards){
             card.classList.toggle('flip');
         }
         card_list.style.pointerEvents = "all";
-    }, level * 900);
+    }, level * 1000);
+}
+function review(){
+    let review_time = level * 1;
+    time.style.color = '#0f0';
+    time.innerHTML = review_time;
+    let review_time_loop = setInterval(()=>{
+        review_time--;
+        if(review_time >= 0)
+            time.innerHTML = review_time;
+        else{
+            time.innerHTML = level*8 + "s to play";
+            time.style.color = '#ff0';
+            clearInterval(review_time_loop);
+        }
+    }, 1000);
 }
 function initRandomIndex(){
     // image co chi so tu 1 -> 50
