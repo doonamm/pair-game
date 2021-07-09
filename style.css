@@ -11,8 +11,12 @@
 ul{
     list-style: none;
 }
+@font-face{
+    font-family: myFont;
+    src: url(font/COMIC.TTF);
+}
 body{
-    font-family: cursive;
+    font-family: myFont;
     font-size: 20px;
     color: #000;
     background-color: #fff;
