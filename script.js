@@ -45,7 +45,7 @@ function clickEvent(e = window.event){
                 if (count_down === 5){
                     time.classList.toggle('shake');
                 }
-                if(count_down < 0){
+                if(count_down <= 0){
                     endGame();
                     resetGame();
                 }
@@ -145,7 +145,7 @@ function review(){
     time.innerHTML = review_time;
     let review_time_loop = setInterval(()=>{
         review_time--;
-        if(review_time >= 0)
+        if(review_time > 0)
             time.innerHTML = review_time;
         else{
             time.innerHTML = level*8 + "s to play";

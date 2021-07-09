@@ -6,6 +6,7 @@
 }
 *, *::after, *::before{
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 ul{
     list-style: none;
@@ -46,17 +47,18 @@ body{
     margin: 5px;
     border-radius: 50%;
     perspective: 400px;
+    -webkit-perspective: 400px;
 }
 #pair-game .card{
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.3s;
-    transform-style: preserve-3d;
     border-radius: inherit;
     display: inline-block;
     box-shadow: inset 0 0 10px -0.5px green;
+    transform-style: preserve-3d;
     transition: transform 0.3s ease-out;
+    -webkit-transition: transform 0.3s;
     /* Cach 1 */
     /* display: flex;
     flex-direction: column;
@@ -68,6 +70,7 @@ body{
 }
 #pair-game .card.flip{
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 #pair-game img{
     position: absolute;
@@ -80,6 +83,9 @@ body{
     pointer-events: none;
     backface-visibility: hidden;
     transition: filter 0.3s ease-out;
+    -webkit-transform: translate(-50%, -50%) rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: filter 0.3s ease-out;
 }
 #pair-game .card::before{
     content: "";
@@ -96,6 +102,7 @@ body{
     top: 0;
     left: 0;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 #pair-game .top-section{
     height: fit-content;
@@ -115,9 +122,13 @@ body{
     transition: text-shadow 0.3s ease-in-out;
     animation-duration: .22s;
     animation-iteration-count: infinite;
+    -webkit-transition: text-shadow 0.3s ease-in-out;
+    -webkit-animation-duration: .22s;
+    -webkit-animation-iteration-count: infinite;
 }
 #pair-game .top-section > h2.shake{
     animation-name: shake;
+    -webkit-animation-name: shake;
     text-shadow: 3px 3px 8px #f00, 1px 0px 4px #000, 2px 1px 4px #f00;
 }
 #pair-game .top-section .level{
@@ -136,10 +147,15 @@ body{
     animation-iteration-count: infinite;
     transition: color 0.2s, text-shadow 0.2s;
     transition-timing-function: ease-in-out;
+    -webkit-animation-duration: .3;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition:  color 0.2s, text-shadow 0.2s;
+    -webkit-transition-timing-function: ease-in-out;
 }
 #pair-game .top-section .count-down.shake{
     color: #f00 !important;
     animation-name: shake;
+    -webkit-animation-name: shake;
     text-shadow: 1px 0px 1px #000, -1px 0 1px #000, 4px 3px 3px #000;
 }
 #pair-game .detail{
@@ -154,6 +170,9 @@ body{
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-name: shake-special;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: shake-special;
 }
 #pair-game .clearfix::after{
     content: ".";
