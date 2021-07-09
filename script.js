@@ -21,6 +21,8 @@ window.addEventListener("load", ()=>{
 
 //function
 function clickEvent(e = window.event){
+    e.preventDefault();
+    e.stopPropagation();
     //event title click
     if(is_stop && e.target.classList.contains('container')){
         startGame();
