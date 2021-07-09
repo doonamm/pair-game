@@ -215,11 +215,11 @@ body{
     #pair-game .scene{
         width: 140px;
         height: 140px;
-        margin: 10px;
+        margin: 8px;
     }
     #pair-game .top-section > h2{
         font-size: 4.2em;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
     #pair-game .top-section .level{
         font-size: 3.2em;
@@ -263,11 +263,11 @@ body{
     #pair-game .scene{
         width: 140px;
         height: 140px;
-        margin: 10px;
+        margin: 8px;
     }
     #pair-game .top-section > h2{
         font-size: 4.2em;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
     #pair-game .top-section .level{
         font-size: 3.2em;
