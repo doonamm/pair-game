@@ -14,7 +14,7 @@ var count_loop;
 var correct_couple = 0;
 //main
 
-window.addEventListener("click", clickEvent);
+document.querySelector('body').addEventListener("click", clickEvent);
 window.addEventListener("load", ()=>{
     resetGame();
 });
