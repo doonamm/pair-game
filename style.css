@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-size: 0;
+    touch-action: manipulation;
 }
 *, *::after, *::before{
     box-sizing: border-box;
@@ -16,7 +17,6 @@ body{
     background-color: #fff;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
 }
 ::-webkit-scrollbar{
     display: none;
