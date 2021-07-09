@@ -68,7 +68,6 @@ function clickEvent(e = window.event){
             }
             //khop hinh
             else if(last_item.getAttribute('data') === e.target.getAttribute('data')){
-                console.log("correct");
                 correct_couple++;
                 setTimeout(()=>{
                     last_item.firstChild.style.filter = "brightness(40%)";
@@ -201,7 +200,6 @@ function initCard(){
 function updateWidth(){
     let card = document.querySelector('.scene');
     let per_card_width = parseInt(window.getComputedStyle(card).margin)*2 + card.offsetWidth;
-    console.log(per_card_width);
     if(card.offsetWidth < 90){
         switch(level){
             case 1:
@@ -253,7 +251,6 @@ function updateWidth(){
         }
     }
     per_card_width += 10;
-    console.log(per_card_width);
     card_list.style.width = per_card_width +'px';
 }
 function randomNumber(min, max){
