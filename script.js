@@ -2,7 +2,7 @@
 //target la element kich hoat su kien tu user (khong phu thuoc nhu currentTarget)
 var card_list = document.getElementsByClassName('card-list')[0];
 var time = document.querySelector('.count-down');
-var level = 1;
+var level = 10;
 var card_amount = 4;
 var random_index_list = [];
 var last_item = undefined;
