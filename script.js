@@ -262,6 +262,6 @@ function updateViewCount(){
     fetch('https://api.countapi.xyz/update/doonamm/pairgame/?amount=1')
 	.then(res => res.json())
 	.then(res => {
-		console.log(res.value);
+		console.log("View count: ", res.value);
 	});
 }
