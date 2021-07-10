@@ -2,7 +2,7 @@
 //target la element kich hoat su kien tu user (khong phu thuoc nhu currentTarget)
 var card_list = document.getElementsByClassName('card-list')[0];
 var time = document.querySelector('.count-down');
-var level = 1;
+var level = 10;
 var card_amount = 4;
 var random_index_list = [];
 var last_item = undefined;
@@ -13,6 +13,8 @@ var count_down = 10;
 var count_loop;
 var correct_couple = 0;
 //main
+
+updateViewCount();
 
 document.querySelector('body').addEventListener("click", clickEvent);
 window.addEventListener("load", ()=>{
@@ -255,4 +257,11 @@ function updateWidth(){
 }
 function randomNumber(min, max){
     return Math.round(Math.random()*(max - min) + min);
+}
+function updateViewCount(){
+    fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
+	.then(res => res.json())
+	.then(res => {
+		console.log(res.value);
+	});
 }
