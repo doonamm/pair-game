@@ -259,7 +259,7 @@ function randomNumber(min, max){
     return Math.round(Math.random()*(max - min) + min);
 }
 function updateViewCount(){
-    fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
+    fetch('https://api.countapi.xyz/update/doonamm/pairgame/?amount=1')
 	.then(res => res.json())
 	.then(res => {
 		console.log(res.value);
